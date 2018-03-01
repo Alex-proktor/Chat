@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    {% if username %}
+        <a href="/auth/logout/">Выйти ({{ username }})</a>
+    {% else %}
+        <a href="/auth/login/">Войти</a>
+    {% endif %}
+</div>
+<div>
+    <h1>Мой чат</h1>
+    {% if username %}
+        <p>Привет, {{ username }}!</p>
+    {% else %}
+        <p>Для входа в чат нажмите "Войти"</p>
+    {% endif %}
+
+    {% block login %}{% endblock %}
+</div>
+</body>
+</html>
